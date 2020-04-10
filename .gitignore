@@ -104,3 +104,6 @@ dist
 .tern-port
 vendor/
 .github/workflows/devc-support.code-workspace
+
+#IDE files
+.idea
