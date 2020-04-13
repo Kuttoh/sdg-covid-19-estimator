@@ -9,7 +9,7 @@ $router = new Router(new Request);
 
 $router->get('/', function() {
     return <<<HTML
-  <h1>Covid 19 Impact Estimator</h1>
+  <h2>Covid 19 Impact Estimator #BuildForSDG Challenge 2020</h2>
 HTML;
 });
 
