@@ -35,8 +35,8 @@ function covid19ImpactEstimator($data)
     $impactCasesForVentilatorsByRequestedTime = intval(0.02 * $impactInfectionsByRequestedTime);
     $severeCasesForVentilatorsByRequestedTime = intval(0.02 * $severeInfectionsByRequestedTime);
 
-    $impactDollarsInFlight = intval(($impactInfectionsByRequestedTime * $input->region->avgDailyIncomePopulation * $input->region->avgDailyIncomeInUSD)/$period);
-    $severeDollarsInFlight = intval(($severeInfectionsByRequestedTime * $input->region->avgDailyIncomePopulation * $input->region->avgDailyIncomeInUSD)/$period);
+    $impactDollarsInFlight = intval(($impactInfectionsByRequestedTime * $input->region->avgDailyIncomePopulation * $input->region->avgDailyIncomeInUSD) / $period);
+    $severeDollarsInFlight = intval(($severeInfectionsByRequestedTime * $input->region->avgDailyIncomePopulation * $input->region->avgDailyIncomeInUSD) / $period);
 
     $output = [
         'data' => $input,
@@ -62,3 +62,5 @@ function covid19ImpactEstimator($data)
 
     return json_encode($output);
 }
+
+
