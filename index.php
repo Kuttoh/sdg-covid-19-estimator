@@ -14,14 +14,17 @@ HTML;
 });
 
 $router->post('/api/v1/on-covid-19', function($request) {
-    return covid19ImpactEstimator($request->getBody());
+    $data = json_decode($request->getBody(), true);
+    return json_encode(covid19ImpactEstimator($data), true);
 });
 
 $router->post('/api/v1/on-covid-19/json', function($request) {
-    return covid19ImpactEstimator($request->getBody());
+    $data = json_decode($request->getBody(), true);
+    return json_encode(covid19ImpactEstimator($data), true);
 });
 
 $router->post('/api/v1/on-covid-19/xml', function($request) {
-    $json = covid19ImpactEstimator($request->getBody());
+    $data = json_decode($request->getBody(), true);
+    $json = json_encode(covid19ImpactEstimator($data, true));
     return json2xml($json);
 });
