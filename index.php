@@ -59,6 +59,7 @@ $router->post('/api/v1/on-covid-19/xml', function ($request) {
 });
 
 $router->get('/api/v1/on-covid-19/log', function ($request){
+    echo  get_current_user();
     $start = microtime(true);
     $end = microtime(true);
     $timeDifference = $end - $start;
